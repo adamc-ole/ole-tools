@@ -763,17 +763,12 @@
     </xs:complexType>
     
     <!-- Note: might try to make label simpler, just a string value, no "value" child -->
-    <xs:element name="label" >
+    <xs:element name="label" type="ole:labelType">
         <xs:annotation>
             <xs:documentation>
                 Contains a human-readable label, mapped from a code.
             </xs:documentation>
         </xs:annotation>
-        <xs:complexType>
-            <xs:complexContent>
-                <xs:extension base="ole:labelType"/>
-            </xs:complexContent>
-        </xs:complexType>
     </xs:element>
     
 </xs:schema>
