@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
+    xmlns:ole="http://ole.kuali.org/standards/ole-instance" 
+    targetNamespace="http://ole.kuali.org/standards/ole-instance-circulation">
+    <xs:annotation>
+        <xs:documentation>
+            This schema extends the basic OLE instance document to include the
+            circulation information needed by the discovery layer for building
+            displays for the patron. The additional elements are to be
+            injected by OLE into the more static instance document content at
+            the time the circ instance document is requested.
+        </xs:documentation>
+    </xs:annotation>
+    <xs:import schemaLocation="instance9.1.1-abstracted.xsd"
+        namespace="http://ole.kuali.org/standards/ole-instance"/>
+
+</xs:schema>
