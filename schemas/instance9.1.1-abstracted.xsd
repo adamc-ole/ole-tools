@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified"
            xmlns:ole="http://ole.kuali.org/standards/ole-instance"
-           targetNamespace="http://ole.kuali.org/standards/ole-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+           targetNamespace="http://ole.kuali.org/standards/ole-instance" 
+           xmlns:xs="http://www.w3.org/2001/XMLSchema">
     <xs:element name="instanceCollection" type="ole:instanceCollection"
                 xmlns:ole="http://ole.kuali.org/standards/ole-instance">
     </xs:element>
@@ -327,15 +328,8 @@
             </xs:element>
             <xs:element type="ole:statisticalSearchingCode" name="statisticalSearchingCode"
                         xmlns:ole="http://ole.kuali.org/standards/ole-instance" maxOccurs="unbounded" minOccurs="0"/>
-            <xs:element type="ole:itemType" name="itemType" xmlns:ole="http://ole.kuali.org/standards/ole-instance">
-                <xs:annotation>
-                    <xs:documentation>
-                        (NR)
-                        Locally defined value that is used for circulation purposes and is a controlled value. OLE has
-                        the list control values defined as part of maint. documents.
-                    </xs:documentation>
-                </xs:annotation>
-            </xs:element>
+            <xs:element ref="ole:itemType"/>
+            
             <xs:element type="ole:location" name="location" xmlns:ole="http://ole.kuali.org/standards/ole-instance"
                         minOccurs="0" maxOccurs="1">
                 <xs:annotation>
@@ -398,12 +392,12 @@
             </xs:element>
             <xs:element type="ole:highDensityStorage" name="highDensityStorage"
                         xmlns:ole="http://ole.kuali.org/standards/ole-instance"/>
-            <xs:element type="ole:itemType" name="temporaryItemType"
+            <xs:element type="ole:itemTypeBaseType" name="temporaryItemType"
                         xmlns:ole="http://ole.kuali.org/standards/ole-instance">
                 <xs:annotation>
                     <xs:documentation>
                         (NR)
-                        This is of itemType but used in cases where the item was moved and there is a need to
+                        This is of itemTypeBaseType but used in cases where the item was moved and there is a need to
                         specify a temp. item type.
                     </xs:documentation>
                 </xs:annotation>
@@ -564,14 +558,22 @@
             <xs:element type="xs:string" name="tray"/>
         </xs:sequence>
     </xs:complexType>
-    <xs:complexType name="itemType">
+    
+    <xs:complexType name="itemTypeBaseType" abstract="true">
         <xs:sequence>
-            <xs:element type="xs:string" name="codeValue"/>
-            <xs:element type="xs:string" name="fullValue"/>
-            <xs:element type="ole:typeOrSource" name="typeOrSource"
-                        xmlns:ole="http://ole.kuali.org/standards/ole-instance"/>
+            <xs:element type="xs:string" name="code"/>
+            <xs:element type="ole:typeOrSource" name="typeOrSource"/>
         </xs:sequence>
     </xs:complexType>
+    <xs:element type="ole:itemTypeBaseType" name="itemType" xmlns:ole="http://ole.kuali.org/standards/ole-instance">
+        <xs:annotation>
+            <xs:documentation>
+                (NR)
+                Locally defined value that is used for circulation purposes and is a controlled value. OLE has
+                the list control values defined as part of maint. documents.
+            </xs:documentation>
+        </xs:annotation>
+    </xs:element>
     <xs:complexType name="identifier">
         <xs:annotation>
             <xs:documentation>
@@ -761,14 +763,5 @@
             <xs:extension base="ole:mappedValueType"/>
         </xs:complexContent>
     </xs:complexType>
-    
-    <!-- Note: might try to make label simpler, just a string value, no "value" child -->
-    <xs:element name="label" type="ole:labelType">
-        <xs:annotation>
-            <xs:documentation>
-                Contains a human-readable label, mapped from a code.
-            </xs:documentation>
-        </xs:annotation>
-    </xs:element>
-    
+
 </xs:schema>

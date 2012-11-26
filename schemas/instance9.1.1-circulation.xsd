@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ole="http://ole.kuali.org/standards/ole-instance" 
+    xmlns:circ="http://ole.kuali.org/standards/ole-instance-circulation"
     targetNamespace="http://ole.kuali.org/standards/ole-instance-circulation">
     <xs:annotation>
         <xs:documentation>
@@ -11,7 +13,30 @@
             the time the circ instance document is requested.
         </xs:documentation>
     </xs:annotation>
-    <xs:import schemaLocation="instance9.1.1-abstracted.xsd"
-        namespace="http://ole.kuali.org/standards/ole-instance"/>
+    <xs:import namespace="http://ole.kuali.org/standards/ole-instance"
+        xsi:schemaLocation="http://ole.kuali.org/standards/ole-instance 
+        instance9.1.1-abstracted.xsd"/>
+    
+    <xs:complexType name="itemTypeCircBaseType">
+        <xs:complexContent>
+            <xs:extension base="ole:itemTypeBaseType">
+                <xs:sequence>
+                    <xs:element ref="circ:label" 
+                        xmlns:circ="http://ole.kuali.org/standards/ole-instance-circulation"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    
+    <xs:element name="itemType" type="itemTypeCircBaseType"/>
 
+    <!-- Note: might try to make label simpler, just a string value, no "value" child -->
+    <xs:element name="label" type="ole:labelType">
+        <xs:annotation>
+            <xs:documentation>
+                Contains a human-readable label, mapped from a code.
+            </xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    
 </xs:schema>
