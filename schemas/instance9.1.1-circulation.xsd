@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ole="http://ole.kuali.org/standards/ole-instance" 
+    xmlns:ole="http://ole.kuali.org/standards/ole-instance"
     xmlns:circ="http://ole.kuali.org/standards/ole-instance-circulation"
     targetNamespace="http://ole.kuali.org/standards/ole-instance-circulation">
     <xs:annotation>
@@ -14,29 +14,43 @@
         </xs:documentation>
     </xs:annotation>
     <xs:import namespace="http://ole.kuali.org/standards/ole-instance"
-        xsi:schemaLocation="http://ole.kuali.org/standards/ole-instance 
-        instance9.1.1-abstracted.xsd"/>
-    
-    <xs:complexType name="itemTypeCircBaseType">
+        schemaLocation="instance9.1.1-abstracted.xsd"/>
+
+    <xs:complexType name="itemTypeBaseType">
+        <xs:annotation>
+            <xs:documentation>
+                This extends the ole:itemTypeBaseType to include labels for display
+                to human end users.
+                There should always be at least one label, but we have defined minOccurs=0
+                so that if a label is not configured, the document will still validate.
+            </xs:documentation>
+        </xs:annotation>
         <xs:complexContent>
             <xs:extension base="ole:itemTypeBaseType">
                 <xs:sequence>
                     <xs:element ref="circ:label" 
-                        xmlns:circ="http://ole.kuali.org/standards/ole-instance-circulation"/>
+                        minOccurs="0" maxOccurs="unbounded"/>
                 </xs:sequence>
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
-    
-    <xs:element name="itemType" type="itemTypeCircBaseType"/>
 
+    <xs:element name="itemType" type="circ:itemTypeBaseType"/>
+    
     <!-- Note: might try to make label simpler, just a string value, no "value" child -->
-    <xs:element name="label" type="ole:labelType">
+    <xs:element name="label">
         <xs:annotation>
             <xs:documentation>
-                Contains a human-readable label, mapped from a code.
+                A value that should  be shown to end-users instead of an internal code.
             </xs:documentation>
         </xs:annotation>
+        <xs:complexType>
+            <xs:simpleContent>
+                <xs:extension base="xs:string">
+                    <xs:attributeGroup ref="ole:mappedValueAttrGroup"/>
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
     </xs:element>
-    
+
 </xs:schema>

@@ -703,7 +703,7 @@
         </xs:annotation>
     </xs:attribute>
     
-    <xs:attributeGroup name="mappendValueAttrGroup">
+    <xs:attributeGroup name="mappedValueAttrGroup">
         <xs:annotation>
             <xs:documentation>
                 Group of attributes used in both simple and complex mapped value
@@ -721,7 +721,7 @@
         <xs:complexType>
             <xs:simpleContent>
                 <xs:extension base="xs:string">
-                    <xs:attributeGroup ref="ole:mappendValueAttrGroup"/>
+                    <xs:attributeGroup ref="ole:mappedValueAttrGroup"/>
                 </xs:extension>
             </xs:simpleContent>
         </xs:complexType>
@@ -757,11 +757,5 @@
                 status and human-readable values therefore.</xs:documentation>
         </xs:annotation>
     </xs:element>
-
-    <xs:complexType name="labelType">
-        <xs:complexContent>
-            <xs:extension base="ole:mappedValueType"/>
-        </xs:complexContent>
-    </xs:complexType>
 
 </xs:schema>
