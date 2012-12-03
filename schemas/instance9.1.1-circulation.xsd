@@ -16,28 +16,34 @@
     <xs:import namespace="http://ole.kuali.org/standards/ole-instance"
         schemaLocation="instance9.1.1-abstracted.xsd"/>
 
-    <xs:complexType name="itemTypeBaseType">
+    <xs:complexType name="itemTypeType">
         <xs:annotation>
             <xs:documentation>
                 This extends the ole:itemTypeBaseType to include labels for display
                 to human end users.
-                There should always be at least one label, but we have defined minOccurs=0
-                so that if a label is not configured, the document will still validate.
             </xs:documentation>
         </xs:annotation>
         <xs:complexContent>
             <xs:extension base="ole:itemTypeBaseType">
                 <xs:sequence>
-                    <xs:element ref="circ:label" 
-                        minOccurs="0" maxOccurs="unbounded"/>
+                    <xs:group ref="circ:labelGroup"/>
                 </xs:sequence>
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
 
-    <xs:element name="itemType" type="circ:itemTypeBaseType"/>
+    <xs:element name="itemType" type="circ:itemTypeType"/>
     
-    <!-- Note: might try to make label simpler, just a string value, no "value" child -->
+    <xs:complexType name="locationLevelType">
+        <xs:complexContent>
+            <xs:extension base="ole:locationLevelBaseType">
+                <xs:sequence>
+                    <xs:group ref="circ:labelGroup"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    
     <xs:element name="label">
         <xs:annotation>
             <xs:documentation>
@@ -52,5 +58,16 @@
             </xs:simpleContent>
         </xs:complexType>
     </xs:element>
+    <xs:group name="labelGroup">
+        <xs:annotation>
+            <xs:documentation>
+                There should always be at least one label, but we have defined minOccurs=0
+                so that if a label is not configured, the document will still validate.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element ref="circ:label" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:group>
 
 </xs:schema>

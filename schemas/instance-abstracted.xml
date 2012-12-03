@@ -79,7 +79,7 @@
           <codeValue/>
         </statisticalSearchingCode>
         <itemType>
-          <code>NONCIRC</code>
+          <codeValue>NONCIRC</codeValue>
         </itemType>
         <copyNumber>1</copyNumber>
         <copyNumberLabel>c.</copyNumberLabel>

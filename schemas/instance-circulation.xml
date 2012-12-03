@@ -80,7 +80,7 @@
           <ole:codeValue/>
         </ole:statisticalSearchingCode>
         <circ:itemType>
-          <ole:code>NONCIRC</ole:code>
+          <ole:codeValue>NONCIRC</ole:codeValue>
           <ole:typeOrSource>
             <ole:pointer>http://www.test.com/gero/nimborum</ole:pointer>
             <ole:text>Dummy text</ole:text>

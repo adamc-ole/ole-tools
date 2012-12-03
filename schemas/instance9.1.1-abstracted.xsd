@@ -151,14 +151,7 @@
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="ole:location" name="location" xmlns:ole="http://ole.kuali.org/standards/ole-instance">
-                <xs:annotation>
-                    <xs:documentation>
-                        Global location specific information that is inherited/used by linked items. This information
-                        is not copied for each item. This also has information on the various location levels.
-                    </xs:documentation>
-                </xs:annotation>
-            </xs:element>
+            <xs:element ref="ole:location" />
             <xs:element type="ole:extension" name="extension" xmlns:ole="http://ole.kuali.org/standards/ole-instance">
                 <xs:annotation>
                     <xs:documentation>
@@ -179,15 +172,15 @@
         <xs:attribute type="xs:string" name="primary">
         </xs:attribute>
     </xs:complexType>
-    <xs:complexType name="location">
+    <xs:element name="location" type="ole:locationType"/>
+    <xs:complexType name="locationType">
         <xs:sequence>
-            <xs:element type="ole:locationLevel" name="locationLevel"
+            <xs:element type="ole:locationLevelType" name="locationLevel"
                         xmlns:ole="http://ole.kuali.org/standards/ole-instance">
                 <xs:annotation>
                     <xs:documentation>
-                        This represents hierarchy of levels. If an institution intends to convert the oleHoldings to
-                        sourceHoldings (MFHD) at some point or wants to have the flexibility, they will need to ensure
-                        the mappings are avail in ole location tables. Institutions can have as many levels.
+                        Global location specific information that is inherited/used by linked items. This information
+                        is not copied for each item. This also has information on the various location levels.
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>
@@ -195,11 +188,23 @@
         <xs:attribute type="xs:string" name="primary"></xs:attribute>
         <xs:attribute type="xs:string" name="status"></xs:attribute>
     </xs:complexType>
-    <xs:complexType name="locationLevel">
+    <xs:complexType name="locationLevelType">
+        <xs:complexContent>
+            <xs:extension base="ole:locationLevelBaseType"/>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="locationLevelBaseType" abstract="true">
+        <xs:annotation>
+            <xs:documentation>
+                This represents hierarchy of levels. If an institution intends to convert the oleHoldings to
+                sourceHoldings (MFHD) at some point or wants to have the flexibility, they will need to ensure
+                the mappings are avail in ole location tables. Institutions can have as many levels.
+            </xs:documentation>
+        </xs:annotation>
         <xs:sequence>
             <xs:element type="xs:string" name="name"/>
             <xs:element type="xs:string" name="level"/>
-            <xs:element type="ole:locationLevel" name="locationLevel" minOccurs="0"
+            <xs:element type="ole:locationLevelType" name="locationLevel" minOccurs="0"
                         xmlns:ole="http://ole.kuali.org/standards/ole-instance"/>
         </xs:sequence>
     </xs:complexType>
@@ -330,7 +335,7 @@
                         xmlns:ole="http://ole.kuali.org/standards/ole-instance" maxOccurs="unbounded" minOccurs="0"/>
             <xs:element ref="ole:itemType"/>
             
-            <xs:element type="ole:location" name="location" xmlns:ole="http://ole.kuali.org/standards/ole-instance"
+            <xs:element type="ole:locationType" name="location" xmlns:ole="http://ole.kuali.org/standards/ole-instance"
                         minOccurs="0" maxOccurs="1">
                 <xs:annotation>
                     <xs:documentation>
@@ -561,11 +566,23 @@
     
     <xs:complexType name="itemTypeBaseType" abstract="true">
         <xs:sequence>
-            <xs:element type="xs:string" name="code"/>
-            <xs:element type="ole:typeOrSource" name="typeOrSource"/>
+            <xs:element type="xs:string" name="codeValue"/>
+            <xs:element type="ole:typeOrSource" name="typeOrSource" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>
+                        Should be one occurance of typeOrSource, but currently
+                        OLE does not actually populate this element.
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
         </xs:sequence>
     </xs:complexType>
-    <xs:element type="ole:itemTypeBaseType" name="itemType" xmlns:ole="http://ole.kuali.org/standards/ole-instance">
+    <xs:complexType name="itemTypeType">
+        <xs:complexContent>
+            <xs:extension base="ole:itemTypeBaseType"/>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:element type="ole:itemTypeType" name="itemType" xmlns:ole="http://ole.kuali.org/standards/ole-instance">
         <xs:annotation>
             <xs:documentation>
                 (NR)
@@ -689,6 +706,7 @@
             </xs:extension>
         </xs:simpleContent>
     </xs:complexType>
+    
     <!-- 
         Support for mapped values
     -->
