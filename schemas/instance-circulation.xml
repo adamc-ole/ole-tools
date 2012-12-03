@@ -1,0 +1,141 @@
+<?xml version="1.1"?>
+<ole:instanceCollection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://ole.kuali.org/standards/ole-instance instance9.1.1-circulation.xsd"
+  xmlns:circ="http://ole.kuali.org/standards/ole-instance-circulation"
+  xmlns:ole="http://ole.kuali.org/standards/ole-instance">
+  <ole:instance>
+    <ole:instanceIdentifier>b5bcb943-145e-40dc-87a7-95d1baaa63ba</ole:instanceIdentifier>
+    <ole:oleHoldings primary="true">
+      <ole:holdingsIdentifier>297ba099-a7d3-4da3-98fc-60814d5a48db</ole:holdingsIdentifier>
+      <ole:extentOfOwnership>
+        <ole:textualHoldings>Supp.</ole:textualHoldings>
+        <ole:note type="public">Single Supplement</ole:note>
+        <ole:type>Supplementary Material</ole:type>
+      </ole:extentOfOwnership>
+      <ole:extentOfOwnership>
+        <ole:textualHoldings>index v.1</ole:textualHoldings>
+        <ole:note type="nonPublic">staff note</ole:note>
+        <ole:type>Indexes</ole:type>
+      </ole:extentOfOwnership>
+      <ole:extentOfOwnership>
+        <ole:textualHoldings>v.12-13</ole:textualHoldings>
+        <ole:note type="public">Note for basic</ole:note>
+        <ole:type>Basic Bibliographic Unit</ole:type>
+      </ole:extentOfOwnership>
+      <ole:receiptStatus/>
+      <ole:uri/>
+      <ole:note type="public"/>
+      <ole:location primary="true" status="permanent">
+        <ole:locationLevel>
+          <ole:name>UC</ole:name>
+          <ole:level>Institution</ole:level>
+          <ole:locationLevel>
+            <ole:name>UCCampus</ole:name>
+            <ole:level>Campus</ole:level>
+            <ole:locationLevel>
+              <ole:name>DLL</ole:name>
+              <ole:level>Library</ole:level>
+              <ole:locationLevel>
+                <ole:name>law</ole:name>
+                <ole:level>Collection</ole:level>
+              </ole:locationLevel>
+            </ole:locationLevel>
+          </ole:locationLevel>
+        </ole:locationLevel>
+      </ole:location>
+      <ole:extension>
+        <ole:additionalAttributes>
+          <ole:createdBy>admin</ole:createdBy>
+          <ole:dateEntered>Nov 05, 2012</ole:dateEntered>
+          <ole:lastUpdatedBy>admin</ole:lastUpdatedBy>
+          <ole:lastUpdated>Nov 05, 2012 10:15:16 AM</ole:lastUpdated>
+        </ole:additionalAttributes>
+      </ole:extension>
+      <ole:callNumber>
+        <ole:type>LC</ole:type>
+        <ole:prefix/>
+        <ole:number>KF123.W2 1999</ole:number>
+        <ole:shelvingScheme>
+          <ole:codeValue>0</ole:codeValue>
+        </ole:shelvingScheme>
+        <ole:shelvingOrder>
+          <ole:codeValue/>
+        </ole:shelvingOrder>
+      </ole:callNumber>
+    </ole:oleHoldings>
+    <ole:items>
+      <ole:item>
+        <ole:itemIdentifier>e52f8f0b-178d-417a-9dcd-1b0d48d7b6cd</ole:itemIdentifier>
+        <ole:accessInformation>
+          <ole:barcode>fm29</ole:barcode>
+          <ole:uri/>
+        </ole:accessInformation>
+        <ole:barcodeARSL/>
+        <ole:formerIdentifier>
+          <ole:identifier>
+            <ole:identifierValue/>
+          </ole:identifier>
+        </ole:formerIdentifier>
+        <ole:statisticalSearchingCode>
+          <ole:codeValue/>
+        </ole:statisticalSearchingCode>
+        <circ:itemType>
+          <ole:code>NONCIRC</ole:code>
+          <ole:typeOrSource>
+            <ole:pointer>http://www.test.com/gero/nimborum</ole:pointer>
+            <ole:text>Dummy text</ole:text>
+          </ole:typeOrSource>
+          <circ:label>Non-circulating book</circ:label>
+        </circ:itemType>
+        <ole:copyNumber>1</ole:copyNumber>
+        <ole:copyNumberLabel>c.</ole:copyNumberLabel>
+        <ole:volumeNumber/>
+        <ole:volumeNumberLabel/>
+        <ole:note type="public"/>
+        <ole:enumeration>Suppl.</ole:enumeration>
+        <ole:chronology/>
+        <ole:highDensityStorage>
+          <ole:row/>
+        </ole:highDensityStorage>
+        <circ:temporaryItemType>
+          <ole:code>NONCIRC</ole:code>
+          <ole:typeOrSource>
+            <ole:pointer>http://www.test.com/gero/nimborum</ole:pointer>
+            <ole:text>Dummy text</ole:text>
+          </ole:typeOrSource>
+          <circ:label>
+            Non-circulating book
+          </circ:label>
+        </circ:temporaryItemType>
+        <ole:donorPublicDisplay/>
+        <ole:donorNote/>
+        <ole:callNumber>
+          <ole:type/>
+          <ole:prefix/>
+          <ole:number/>
+          <ole:shelvingScheme>
+            <ole:codeValue/>
+          </ole:shelvingScheme>
+          <ole:shelvingOrder>
+            <ole:codeValue/>
+          </ole:shelvingOrder>
+        </ole:callNumber>
+        <ole:price/>
+        <ole:numberOfPieces/>
+        <ole:itemStatus>AVAILABLE</ole:itemStatus>
+        <ole:itemStatusEffectiveDate/>
+        <ole:checkinNote/>
+        <ole:staffOnlyFlag>false</ole:staffOnlyFlag>
+        <ole:fastAddFlag>false</ole:fastAddFlag>
+        <ole:extension>
+          <ole:additionalAttributes>
+            <ole:createdBy>admin</ole:createdBy>
+            <ole:dateEntered>Nov 05, 2012</ole:dateEntered>
+            <ole:lastUpdatedBy>admin</ole:lastUpdatedBy>
+            <ole:lastUpdated>Nov 05, 2012 10:15:21 AM</ole:lastUpdated>
+          </ole:additionalAttributes>
+        </ole:extension>
+      </ole:item>
+    </ole:items>
+  </ole:instance>
+</ole:instanceCollection>

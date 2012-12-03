@@ -1,0 +1,128 @@
+<?xml version="1.1"?>
+<instanceCollection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://ole.kuali.org/standards/ole-instance instance9.1.1-abstracted.xsd"
+  xmlns="http://ole.kuali.org/standards/ole-instance">
+  <instance>
+    <instanceIdentifier>b5bcb943-145e-40dc-87a7-95d1baaa63ba</instanceIdentifier>
+    <oleHoldings primary="true">
+      <holdingsIdentifier>297ba099-a7d3-4da3-98fc-60814d5a48db</holdingsIdentifier>
+      <extentOfOwnership>
+        <textualHoldings>Supp.</textualHoldings>
+        <note type="public">Single Supplement</note>
+        <type>Supplementary Material</type>
+      </extentOfOwnership>
+      <extentOfOwnership>
+        <textualHoldings>index v.1</textualHoldings>
+        <note type="nonPublic">staff note</note>
+        <type>Indexes</type>
+      </extentOfOwnership>
+      <extentOfOwnership>
+        <textualHoldings>v.12-13</textualHoldings>
+        <note type="public">Note for basic</note>
+        <type>Basic Bibliographic Unit</type>
+      </extentOfOwnership>
+      <receiptStatus/>
+      <uri/>
+      <note type="public"/>
+      <location primary="true" status="permanent">
+        <locationLevel>
+          <name>UC</name>
+          <level>Institution</level>
+          <locationLevel>
+            <name>UCCampus</name>
+            <level>Campus</level>
+            <locationLevel>
+              <name>DLL</name>
+              <level>Library</level>
+              <locationLevel>
+                <name>law</name>
+                <level>Collection</level>
+              </locationLevel>
+            </locationLevel>
+          </locationLevel>
+        </locationLevel>
+      </location>
+      <extension>
+        <additionalAttributes>
+          <createdBy>admin</createdBy>
+          <dateEntered>Nov 05, 2012</dateEntered>
+          <lastUpdatedBy>admin</lastUpdatedBy>
+          <lastUpdated>Nov 05, 2012 10:15:16 AM</lastUpdated>
+        </additionalAttributes>
+      </extension>
+      <callNumber>
+        <type>LC</type>
+        <prefix/>
+        <number>KF123.W2 1999</number>
+        <shelvingScheme>
+          <codeValue>0</codeValue>
+        </shelvingScheme>
+        <shelvingOrder>
+          <codeValue/>
+        </shelvingOrder>
+      </callNumber>
+    </oleHoldings>
+    <items>
+      <item>
+        <itemIdentifier>e52f8f0b-178d-417a-9dcd-1b0d48d7b6cd</itemIdentifier>
+        <accessInformation>
+          <barcode>fm29</barcode>
+          <uri/>
+        </accessInformation>
+        <barcodeARSL/>
+        <formerIdentifier>
+          <identifier>
+            <identifierValue/>
+          </identifier>
+        </formerIdentifier>
+        <statisticalSearchingCode>
+          <codeValue/>
+        </statisticalSearchingCode>
+        <itemType>
+          <code>NONCIRC</code>
+        </itemType>
+        <copyNumber>1</copyNumber>
+        <copyNumberLabel>c.</copyNumberLabel>
+        <volumeNumber/>
+        <volumeNumberLabel/>
+        <note type="public"/>
+        <enumeration>Suppl.</enumeration>
+        <chronology/>
+        <highDensityStorage>
+          <row/>
+        </highDensityStorage>
+        <temporaryItemType>
+          <codeValue/>
+        </temporaryItemType>
+        <donorPublicDisplay/>
+        <donorNote/>
+        <callNumber>
+          <type/>
+          <prefix/>
+          <number/>
+          <shelvingScheme>
+            <codeValue/>
+          </shelvingScheme>
+          <shelvingOrder>
+            <codeValue/>
+          </shelvingOrder>
+        </callNumber>
+        <price/>
+        <numberOfPieces/>
+        <itemStatus>AVAILABLE</itemStatus>
+        <itemStatusEffectiveDate/>
+        <checkinNote/>
+        <staffOnlyFlag>false</staffOnlyFlag>
+        <fastAddFlag>false</fastAddFlag>
+        <extension>
+          <additionalAttributes>
+            <createdBy>admin</createdBy>
+            <dateEntered>Nov 05, 2012</dateEntered>
+            <lastUpdatedBy>admin</lastUpdatedBy>
+            <lastUpdated>Nov 05, 2012 10:15:21 AM</lastUpdated>
+          </additionalAttributes>
+        </extension>
+      </item>
+    </items>
+  </instance>
+</instanceCollection>
