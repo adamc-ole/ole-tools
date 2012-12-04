@@ -36,13 +36,27 @@
     
     <xs:complexType name="locationLevelType">
         <xs:complexContent>
-            <xs:extension base="ole:locationLevelBaseType">
+            <!-- Derived from ole:locationLevelType so that -->
+            <xs:extension base="ole:locationLevelType">
                 <xs:sequence>
                     <xs:group ref="circ:labelGroup"/>
                 </xs:sequence>
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
+    
+    <!--<xs:element name="locationLevel" type="circ:locationLevelType" substitutionGroup="ole:locationLevel"/>-->
+    <xs:element name="locationLevel">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="ole:locationLevelType">
+                    <xs:sequence>
+                        <xs:group ref="circ:labelGroup"/>
+                    </xs:sequence>
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
     
     <xs:element name="label">
         <xs:annotation>

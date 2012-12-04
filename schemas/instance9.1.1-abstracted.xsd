@@ -175,24 +175,58 @@
     <xs:element name="location" type="ole:locationType"/>
     <xs:complexType name="locationType">
         <xs:sequence>
-            <xs:element type="ole:locationLevelType" name="locationLevel"
-                        xmlns:ole="http://ole.kuali.org/standards/ole-instance">
-                <xs:annotation>
-                    <xs:documentation>
-                        Global location specific information that is inherited/used by linked items. This information
-                        is not copied for each item. This also has information on the various location levels.
-                    </xs:documentation>
-                </xs:annotation>
-            </xs:element>
+            <xs:element type="ole:locationLevelType" name="locationLevel"/>
         </xs:sequence>
         <xs:attribute type="xs:string" name="primary"></xs:attribute>
         <xs:attribute type="xs:string" name="status"></xs:attribute>
     </xs:complexType>
+    <!--
+    <xs:element name="locationLevel">
+        <xs:annotation>
+            <xs:documentation>
+                Global location specific information that is inherited/used by linked items. This information
+                is not copied for each item. This also has information on the various location levels.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element type="xs:string" name="name"/>
+                <xs:element type="xs:string" name="level"/>
+                <xs:element ref="ole:locationLevel" minOccurs="0"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    -->
+    <xs:complexType name="locationLevelType">
+        <xs:annotation>
+            <xs:documentation>
+                This represents hierarchy of levels. If an institution intends to convert the oleHoldings to
+                sourceHoldings (MFHD) at some point or wants to have the flexibility, they will need to ensure
+                the mappings are avail in ole location tables. Institutions can have as many levels.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element type="xs:string" name="name"/>
+            <xs:element type="xs:string" name="level"/>
+            <xs:element type="ole:locationLevelType" name="locationLevel" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="locationLevelOld" type="ole:locationLevelType" 
+        xmlns:ole="http://ole.kuali.org/standards/ole-instance">
+        <xs:annotation>
+            <xs:documentation>
+                Global location specific information that is inherited/used by linked items. This information
+                is not copied for each item. This also has information on the various location levels.
+            </xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <!--
     <xs:complexType name="locationLevelType">
         <xs:complexContent>
             <xs:extension base="ole:locationLevelBaseType"/>
         </xs:complexContent>
     </xs:complexType>
+    -->
     <xs:complexType name="locationLevelBaseType" abstract="true">
         <xs:annotation>
             <xs:documentation>
@@ -208,6 +242,7 @@
                         xmlns:ole="http://ole.kuali.org/standards/ole-instance"/>
         </xs:sequence>
     </xs:complexType>
+
     <xs:complexType name="note">
         <xs:simpleContent>
             <xs:extension base="xs:string">
@@ -334,7 +369,6 @@
             <xs:element type="ole:statisticalSearchingCode" name="statisticalSearchingCode"
                         xmlns:ole="http://ole.kuali.org/standards/ole-instance" maxOccurs="unbounded" minOccurs="0"/>
             <xs:element ref="ole:itemType"/>
-            
             <xs:element type="ole:locationType" name="location" xmlns:ole="http://ole.kuali.org/standards/ole-instance"
                         minOccurs="0" maxOccurs="1">
                 <xs:annotation>
@@ -344,7 +378,6 @@
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>
-
             <xs:element type="xs:string" name="copyNumber">
                 <xs:annotation>
                     <xs:documentation>

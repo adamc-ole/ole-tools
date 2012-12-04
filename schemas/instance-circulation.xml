@@ -26,22 +26,23 @@
       <ole:uri/>
       <ole:note type="public"/>
       <ole:location primary="true" status="permanent">
-        <ole:locationLevel>
+        <circ:locationLevel>
           <ole:name>UC</ole:name>
           <ole:level>Institution</ole:level>
-          <ole:locationLevel>
+          <circ:locationLevel>
             <ole:name>UCCampus</ole:name>
             <ole:level>Campus</ole:level>
-            <ole:locationLevel>
+            <circ:locationLevel>
               <ole:name>DLL</ole:name>
               <ole:level>Library</ole:level>
-              <ole:locationLevel>
+              <circ:locationLevel>
                 <ole:name>law</ole:name>
                 <ole:level>Collection</ole:level>
-              </ole:locationLevel>
-            </ole:locationLevel>
-          </ole:locationLevel>
-        </ole:locationLevel>
+                <circ:label></circ:label>
+              </circ:locationLevel>
+            </circ:locationLevel>
+          </circ:locationLevel>
+        </circ:locationLevel>
       </ole:location>
       <ole:extension>
         <ole:additionalAttributes>
