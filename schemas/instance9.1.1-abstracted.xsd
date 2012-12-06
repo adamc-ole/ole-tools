@@ -42,8 +42,7 @@
                 </xs:annotation>
             </xs:element>
             <xs:element type="ole:formerIdentifier" name="formerResourceIdentifier"
-                xmlns:ole="http://ole.kuali.org/standards/ole-instance" minOccurs="0"
-                maxOccurs="unbounded">
+                minOccurs="0" maxOccurs="unbounded">
                 <xs:annotation>
                     <xs:documentation> These are Identifiers from the legacy system for the
                         bibliographic records that are stored in the 035 of the Marc record.
@@ -51,27 +50,23 @@
                         records. </xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="ole:oleHoldings" name="oleHoldings"
-                xmlns:ole="http://ole.kuali.org/standards/ole-instance">
+            <xs:element type="ole:oleHoldings" name="oleHoldings">
                 <xs:annotation>
                     <xs:documentation> General holdings information for institutions not using
                         specific source holdings </xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="ole:sourceHoldings" name="sourceHoldings"
-                xmlns:ole="http://ole.kuali.org/standards/ole-instance">
+            <xs:element type="ole:sourceHoldings" name="sourceHoldings">
                 <xs:annotation>
                     <xs:documentation> Specific holdings format </xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="ole:items" name="items"
-                xmlns:ole="http://ole.kuali.org/standards/ole-instance">
+            <xs:element type="ole:items" name="items">
                 <xs:annotation>
                     <xs:documentation> Collection of Items. </xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="ole:extension" name="extension"
-                xmlns:ole="http://ole.kuali.org/standards/ole-instance">
+            <xs:element type="ole:extension" name="extension">
                 <xs:annotation>
                     <xs:documentation> Element borrowed from/maps to MODS extension element. It may
                         be used for elements that are local to the creators of the Instance
@@ -94,8 +89,7 @@
                 </xs:annotation>
             </xs:element>
             <xs:element type="ole:extentOfOwnership" name="extentOfOwnership"
-                xmlns:ole="http://ole.kuali.org/standards/ole-instance" minOccurs="0"
-                maxOccurs="unbounded">
+                minOccurs="0" maxOccurs="unbounded">
                 <xs:annotation>
                     <xs:documentation> (R) This is a free txt for summary holdings (textual) for
                         institutions not using source holdings. It will be mapped to MFHD 866$a with
@@ -111,24 +105,22 @@
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="ole:uri" xmlns:ole="http://ole.kuali.org/standards/ole-instance"
-                name="uri" maxOccurs="unbounded" minOccurs="0">
+            <xs:element type="ole:uri" name="uri"
+                maxOccurs="unbounded" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation> This is to indicate the universal resource identifier. Maps
                         to 856$u. This could also be the one recorded in the bib record.
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="ole:note" name="note"
-                xmlns:ole="http://ole.kuali.org/standards/ole-instance" minOccurs="0"
-                maxOccurs="unbounded">
+            <xs:element type="ole:note" name="note" 
+                minOccurs="0" maxOccurs="unbounded">
                 <xs:annotation>
                     <xs:documentation> This indicates public or non-public </xs:documentation>
                 </xs:annotation>
             </xs:element>
             <xs:element ref="ole:location"/>
-            <xs:element type="ole:extension" name="extension"
-                xmlns:ole="http://ole.kuali.org/standards/ole-instance">
+            <xs:element type="ole:extension" name="extension">
                 <xs:annotation>
                     <xs:documentation> Element borrowed from/maps to MODS extension element. It may
                         be used for elements that are local to the creators of the Instance
@@ -137,8 +129,7 @@
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="ole:callNumber"
-                xmlns:ole="http://ole.kuali.org/standards/ole-instance" name="callNumber">
+            <xs:element type="ole:callNumber" name="callNumber">
                 <xs:annotation>
                     <xs:documentation> To be filled </xs:documentation>
                 </xs:annotation>
@@ -209,7 +200,6 @@
             <xs:element type="xs:string" name="level"/>
         </xs:sequence>
     </xs:complexType>
-
     <xs:complexType name="note">
         <xs:simpleContent>
             <xs:extension base="xs:string">
@@ -221,16 +211,14 @@
         <xs:sequence>
             <xs:element type="xs:string" name="codeValue"/>
             <xs:element type="xs:string" name="fullValue"/>
-            <xs:element type="ole:typeOrSource" name="typeOrSource"
-                xmlns:ole="http://ole.kuali.org/standards/ole-instance"/>
+            <xs:element type="ole:typeOrSource" name="typeOrSource"/>
         </xs:sequence>
     </xs:complexType>
     <xs:complexType name="shelvingOrder">
         <xs:sequence>
             <xs:element type="xs:string" name="codeValue"/>
             <xs:element type="xs:string" name="fullValue"/>
-            <xs:element type="ole:typeOrSource" name="typeOrSource"
-                xmlns:ole="http://ole.kuali.org/standards/ole-instance"/>
+            <xs:element type="ole:typeOrSource" name="typeOrSource"/>
         </xs:sequence>
     </xs:complexType>
     <xs:complexType name="sourceHoldings">
@@ -241,16 +229,14 @@
                 </xs:annotation>
             </xs:element>
             <xs:element type="xs:string" name="name"/>
-            <xs:element type="ole:extension" name="holdings"
-                xmlns:ole="http://ole.kuali.org/standards/ole-instance">
+            <xs:element type="ole:extension" name="holdings">
                 <xs:annotation>
                     <xs:documentation> This indicates what the source of the holdings record is;
                         i.e. MARC or DC or EAD etc.. Data is wrapped in the CDATA section with the
                         raw record in the native format. </xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="ole:extension" name="extension"
-                xmlns:ole="http://ole.kuali.org/standards/ole-instance">
+            <xs:element type="ole:extension" name="extension">
                 <xs:annotation>
                     <xs:documentation> Element borrowed from/maps to MODS extension element. It may
                         be used for elements that are local to the creators of the Instance
@@ -297,8 +283,7 @@
                     <xs:documentation> This is the vendor line item identifier. </xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="ole:accessInformation" name="accessInformation"
-                xmlns:ole="http://ole.kuali.org/standards/ole-instance">
+            <xs:element type="ole:accessInformation" name="accessInformation">
                 <xs:annotation>
                     <xs:documentation> (R) This is volume specific URL. </xs:documentation>
                 </xs:annotation>
@@ -310,8 +295,7 @@
                 </xs:annotation>
             </xs:element>
             <xs:element type="ole:formerIdentifier" name="formerIdentifier"
-                xmlns:ole="http://ole.kuali.org/standards/ole-instance" minOccurs="0"
-                maxOccurs="unbounded">
+                minOccurs="0" maxOccurs="unbounded">
                 <xs:annotation>
                     <xs:documentation> (R) Does not map to MFHD. Identifies previously used barcodes
                         or other identifiers for the holdings/item being described. Also allows for
@@ -320,8 +304,7 @@
                 </xs:annotation>
             </xs:element>
             <xs:element type="ole:statisticalSearchingCode" name="statisticalSearchingCode"
-                xmlns:ole="http://ole.kuali.org/standards/ole-instance" maxOccurs="unbounded"
-                minOccurs="0"/>
+                maxOccurs="unbounded" minOccurs="0"/>
             <xs:element ref="ole:itemType"/>
             <xs:element ref="ole:location" minOccurs="0" maxOccurs="1">
                 <xs:annotation>
@@ -358,8 +341,7 @@
                         number. Number of volume provided in volumeNumber </xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="ole:note" name="note"
-                xmlns:ole="http://ole.kuali.org/standards/ole-instance"/>
+            <xs:element type="ole:note" name="note"/>
             <xs:element type="xs:string" name="enumeration">
                 <xs:annotation>
                     <xs:documentation>Does not map to MFHD. Designation used to identify a specific
@@ -375,8 +357,7 @@
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="ole:highDensityStorage" name="highDensityStorage"
-                xmlns:ole="http://ole.kuali.org/standards/ole-instance"/>
+            <xs:element type="ole:highDensityStorage" name="highDensityStorage"/>
             <xs:element ref="ole:temporaryItemType"/>
             <xs:element type="xs:string" name="fund">
                 <xs:annotation>
@@ -398,8 +379,7 @@
                         that were purchased not using some specific funds. </xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="ole:callNumber"
-                xmlns:ole="http://ole.kuali.org/standards/ole-instance" name="callNumber">
+            <xs:element type="ole:callNumber" name="callNumber">
                 <xs:annotation>
                     <xs:documentation> LC or Duewy decimal etc... </xs:documentation>
                 </xs:annotation>
@@ -437,8 +417,7 @@
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="ole:extension" name="extension"
-                xmlns:ole="http://ole.kuali.org/standards/ole-instance">
+            <xs:element type="ole:extension" name="extension">
                 <xs:annotation>
                     <xs:documentation> Element borrowed from/maps to MODS extension element. It may
                         be used for elements that are local to the creators of the Instance
@@ -469,16 +448,14 @@
     <xs:complexType name="accessInformation">
         <xs:sequence>
             <xs:element type="xs:string" name="barcode"/>
-            <xs:element type="ole:uri" name="uri"
-                xmlns:ole="http://ole.kuali.org/standards/ole-instance"/>
+            <xs:element type="ole:uri" name="uri"/>
         </xs:sequence>
     </xs:complexType>
     <xs:complexType name="extentOfOwnership">
         <xs:sequence>
             <xs:element type="xs:string" name="textualHoldings"/>
             <xs:element type="ole:note" name="note"
-                xmlns:ole="http://ole.kuali.org/standards/ole-instance" minOccurs="0"
-                maxOccurs="unbounded"/>
+                minOccurs="0" maxOccurs="unbounded"/>
             <xs:element type="xs:string" name="type"/>
         </xs:sequence>
     </xs:complexType>
@@ -492,8 +469,7 @@
         <xs:sequence>
             <xs:element type="xs:string" name="codeValue"/>
             <xs:element type="xs:string" name="fullValue"/>
-            <xs:element type="ole:typeOrSource" name="typeOrSource"
-                xmlns:ole="http://ole.kuali.org/standards/ole-instance"/>
+            <xs:element type="ole:typeOrSource" name="typeOrSource"/>
         </xs:sequence>
     </xs:complexType>
     <xs:complexType name="highDensityStorage">

@@ -32,7 +32,7 @@
         </xs:complexContent>
     </xs:complexType>
     <xs:element name="itemType" type="circ:itemTypeType" substitutionGroup="ole:itemType"/>
-    <xs:element name="temporaryItemType" type="circ:ItemTypeType" substitutionGroup="ole:temporaryItemType"/>
+    <xs:element name="temporaryItemType" type="circ:itemTypeType" substitutionGroup="ole:temporaryItemType"/>
     
     <xs:complexType name="locationLevelType">
         <xs:complexContent>
@@ -46,7 +46,6 @@
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
-    
     <xs:element name="locationLevel" type="circ:locationLevelType" 
         substitutionGroup="ole:locationLevelHead"/>
     
