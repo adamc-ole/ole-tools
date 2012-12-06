@@ -637,6 +637,23 @@
         </xs:simpleContent>
     </xs:complexType>
 
+    <xs:complexType name="itemStatusBaseType">
+        <xs:sequence>
+            <xs:element name="code" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="itemStatusType">
+        <xs:complexContent>
+            <xs:extension base="ole:itemStatusBaseType"/>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:element name="itemStatus" type="ole:itemStatusType">
+        <xs:annotation>
+            <xs:documentation>Contains information about the current status of an item, including a
+                local code representing the status and human-readable values
+                therefore.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
     <!-- 
         Support for mapped values
     -->
@@ -686,7 +703,7 @@
         <xs:attribute ref="ole:code"/>
     </xs:complexType>
 
-    <xs:complexType name="itemStatusType">
+    <!--<xs:complexType name="itemStatusType">
         <xs:complexContent>
             <xs:extension base="ole:mappedValueType">
                 <xs:sequence>
@@ -695,14 +712,14 @@
                 <xs:attribute name="changeDate" type="xs:dateTime"/>
             </xs:extension>
         </xs:complexContent>
-    </xs:complexType>
+    </xs:complexType>-->
 
-    <xs:element name="itemStatus" type="ole:itemStatusType">
+    <!--<xs:element name="itemStatus" type="ole:itemStatusType">
         <xs:annotation>
             <xs:documentation>Contains information about the current status of an item, including a
                 local code representing the status and human-readable values
                 therefore.</xs:documentation>
         </xs:annotation>
-    </xs:element>
+    </xs:element>-->
 
 </xs:schema>

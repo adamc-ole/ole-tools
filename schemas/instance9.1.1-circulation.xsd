@@ -50,6 +50,17 @@
     <xs:element name="locationLevel" type="circ:locationLevelType" 
         substitutionGroup="ole:locationLevelHead"/>
     
+    <xs:complexType name="itemStatusType">
+        <xs:complexContent>
+            <xs:extension base="ole:itemStatusBaseType">
+                <xs:sequence>
+                    <xs:group ref="circ:labelGroup"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:element name="itemStatus"></xs:element>
+    
     <xs:element name="label">
         <xs:annotation>
             <xs:documentation>
