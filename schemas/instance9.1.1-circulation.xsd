@@ -52,14 +52,15 @@
     
     <xs:complexType name="itemStatusType">
         <xs:complexContent>
-            <xs:extension base="ole:itemStatusBaseType">
+            <xs:extension base="ole:itemStatusType">
                 <xs:sequence>
                     <xs:group ref="circ:labelGroup"/>
                 </xs:sequence>
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
-    <xs:element name="itemStatus"></xs:element>
+    <xs:element name="itemStatus" type="circ:itemStatusType"
+        substitutionGroup="ole:itemStatus"/>
     
     <xs:element name="label">
         <xs:annotation>

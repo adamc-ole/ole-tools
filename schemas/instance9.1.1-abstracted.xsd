@@ -418,11 +418,7 @@
                         individual pieces in the barcoded item. </xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element type="xs:string" name="itemStatus">
-                <xs:annotation>
-                    <xs:documentation> Current status of the item. </xs:documentation>
-                </xs:annotation>
-            </xs:element>
+            <xs:element ref="ole:itemStatus"/>
             <xs:element type="xs:string" name="itemStatusEffectiveDate">
                 <xs:annotation>
                     <xs:documentation> Date when the status was assigned. Tied to the status change.
@@ -637,23 +633,18 @@
         </xs:simpleContent>
     </xs:complexType>
 
-    <xs:complexType name="itemStatusBaseType">
-        <xs:sequence>
-            <xs:element name="code" type="xs:string"/>
-        </xs:sequence>
-    </xs:complexType>
     <xs:complexType name="itemStatusType">
-        <xs:complexContent>
-            <xs:extension base="ole:itemStatusBaseType"/>
-        </xs:complexContent>
-    </xs:complexType>
-    <xs:element name="itemStatus" type="ole:itemStatusType">
         <xs:annotation>
             <xs:documentation>Contains information about the current status of an item, including a
                 local code representing the status and human-readable values
                 therefore.</xs:documentation>
         </xs:annotation>
-    </xs:element>
+        <xs:sequence>
+            <xs:element name="code" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="itemStatus" type="ole:itemStatusType"/>
+    
     <!-- 
         Support for mapped values
     -->
