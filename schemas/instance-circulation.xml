@@ -64,9 +64,17 @@
         </ole:shelvingOrder>
       </ole:callNumber>
     </ole:oleHoldings>
+    <ole:sourceHoldings>
+      <ole:holdingsIdentifier></ole:holdingsIdentifier>
+      <ole:name></ole:name>
+      <ole:holdings></ole:holdings>
+      <ole:extension></ole:extension>
+    </ole:sourceHoldings>
     <ole:items>
       <ole:item>
         <ole:itemIdentifier>e52f8f0b-178d-417a-9dcd-1b0d48d7b6cd</ole:itemIdentifier>
+        <ole:purchaseOrderLineItemIdentifier/>
+        <ole:vendorLineItemIdentifier/>
         <ole:accessInformation>
           <ole:barcode>fm29</ole:barcode>
           <ole:uri/>
@@ -76,9 +84,15 @@
           <ole:identifier>
             <ole:identifierValue/>
           </ole:identifier>
+          <ole:identifierType/>
         </ole:formerIdentifier>
         <ole:statisticalSearchingCode>
           <ole:codeValue/>
+          <ole:fullValue/>
+          <ole:typeOrSource>
+            <ole:pointer>http://www.test.org/montis/flammato</ole:pointer>
+            <ole:text></ole:text>
+          </ole:typeOrSource>
         </ole:statisticalSearchingCode>
         <circ:itemType>
           <ole:codeValue>NONCIRC</ole:codeValue>
@@ -104,9 +118,7 @@
             <ole:pointer>http://www.test.com/gero/nimborum</ole:pointer>
             <ole:text>Dummy text</ole:text>
           </ole:typeOrSource>
-          <circ:label>
-            Non-circulating book
-          </circ:label>
+          <circ:label>Non-circulating book</circ:label>
         </circ:temporaryItemType>
         <ole:donorPublicDisplay/>
         <ole:donorNote/>
@@ -123,7 +135,10 @@
         </ole:callNumber>
         <ole:price/>
         <ole:numberOfPieces/>
-        <ole:itemStatus>AVAILABLE</ole:itemStatus>
+        <circ:itemStatus>
+          <ole:code>AVAILABLE</ole:code>
+          <circ:label>On Shelf</circ:label>
+        </circ:itemStatus>
         <ole:itemStatusEffectiveDate/>
         <ole:checkinNote/>
         <ole:staffOnlyFlag>false</ole:staffOnlyFlag>

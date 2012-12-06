@@ -62,9 +62,17 @@
         </shelvingOrder>
       </callNumber>
     </oleHoldings>
+    <sourceHoldings>
+      <holdingsIdentifier></holdingsIdentifier>
+      <name></name>
+      <holdings></holdings>
+      <extension></extension>
+    </sourceHoldings>
     <items>
       <item>
         <itemIdentifier>e52f8f0b-178d-417a-9dcd-1b0d48d7b6cd</itemIdentifier>
+        <purchaseOrderLineItemIdentifier/>
+        <vendorLineItemIdentifier/>
         <accessInformation>
           <barcode>fm29</barcode>
           <uri/>
@@ -74,9 +82,15 @@
           <identifier>
             <identifierValue/>
           </identifier>
+          <identifierType/>
         </formerIdentifier>
         <statisticalSearchingCode>
           <codeValue/>
+          <fullValue></fullValue>
+          <typeOrSource>
+            <pointer>http://www.test.org/montis/flammato</pointer>
+            <text></text>
+          </typeOrSource>
         </statisticalSearchingCode>
         <itemType>
           <codeValue>NONCIRC</codeValue>
@@ -90,10 +104,12 @@
         <chronology/>
         <highDensityStorage>
           <row/>
+          <module/>
+          <shelf/>
+          <tray/>
         </highDensityStorage>
-        <temporaryItemType>
-          <codeValue/>
-        </temporaryItemType>
+        <temporaryItemType/>
+        
         <donorPublicDisplay/>
         <donorNote/>
         <callNumber>
@@ -109,7 +125,9 @@
         </callNumber>
         <price/>
         <numberOfPieces/>
-        <itemStatus>AVAILABLE</itemStatus>
+        <itemStatus>
+          <code>AVAILABLE</code>
+        </itemStatus>
         <itemStatusEffectiveDate/>
         <checkinNote/>
         <staffOnlyFlag>false</staffOnlyFlag>
