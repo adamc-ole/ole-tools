@@ -485,7 +485,7 @@
         </xs:sequence>
     </xs:complexType>
 
-    <xs:complexType name="itemTypeType" abstract="true">
+    <xs:complexType name="itemTypeType">
         <xs:annotation>
             <xs:documentation> (NR) Locally defined value that is used for circulation purposes and
                 is a controlled value. OLE has the list control values defined as part of maint.
