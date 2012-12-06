@@ -108,8 +108,10 @@
           <shelf/>
           <tray/>
         </highDensityStorage>
-        <temporaryItemType/>
-        
+        <temporaryItemType>
+          <codeValue>NONCIRC</codeValue>
+        </temporaryItemType>
+        <fund/>
         <donorPublicDisplay/>
         <donorNote/>
         <callNumber>

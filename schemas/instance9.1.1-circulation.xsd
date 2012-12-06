@@ -19,20 +19,20 @@
     <xs:complexType name="itemTypeType">
         <xs:annotation>
             <xs:documentation>
-                This extends the ole:itemTypeBaseType to include labels for display
+                This extends the ole:itemTypeType to include labels for display
                 to human end users.
             </xs:documentation>
         </xs:annotation>
         <xs:complexContent>
-            <xs:extension base="ole:itemTypeBaseType">
+            <xs:extension base="ole:itemTypeType">
                 <xs:sequence>
                     <xs:group ref="circ:labelGroup"/>
                 </xs:sequence>
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
-
-    <xs:element name="itemType" type="circ:itemTypeType"/>
+    <xs:element name="itemType" type="circ:itemTypeType" substitutionGroup="ole:itemType"/>
+    <xs:element name="temporaryItemType" type="circ:ItemTypeType" substitutionGroup="ole:temporaryItemType"/>
     
     <xs:complexType name="locationLevelType">
         <xs:complexContent>

@@ -113,13 +113,14 @@
           <ole:row/>
         </ole:highDensityStorage>
         <circ:temporaryItemType>
-          <ole:code>NONCIRC</ole:code>
+          <ole:codeValue>NONCIRC</ole:codeValue>
           <ole:typeOrSource>
             <ole:pointer>http://www.test.com/gero/nimborum</ole:pointer>
             <ole:text>Dummy text</ole:text>
           </ole:typeOrSource>
           <circ:label>Non-circulating book</circ:label>
         </circ:temporaryItemType>
+        <ole:fund/>
         <ole:donorPublicDisplay/>
         <ole:donorNote/>
         <ole:callNumber>
